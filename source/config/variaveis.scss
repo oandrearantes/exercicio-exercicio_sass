@@ -1,0 +1,28 @@
+// Variáveis
+$fontPrincipal: Roboto, sans-serif;
+$corPrincipal: #182C61;
+$corSecundaria: #44bd32;
+$corSecundariaHover: #4cd137;
+$corDeTexto: #fff;
+$containerMaxWidth: 1024px;
+$corDeFundo:  #f5f6fa;
+
+// Mixins
+@mixin container {
+    max-width: $containerMaxWidth;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@mixin flex-center-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin grid($columns, $column-gap, $row-gap) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}

@@ -1,0 +1,67 @@
+@use 'config/reset';
+@use 'config/variaveis';
+@use 'secoes/produtos';
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    @include variaveis.container;
+}
+
+
+header {
+    background-color: variaveis.$corPrincipal;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        @include variaveis.flex-center-space-between;
+        padding: 16px 0;
+
+        nav {
+            .menu {
+                display: flex;
+
+                li {
+                    font-weight: bold;
+                    margin-left: 24px;
+
+                    a {
+                        color: variaveis.$corDeTexto;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    
+        .products {
+            @include variaveis.grid(2, 3%, 4%);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        .products {
+            display: block !important;
+
+            .product-item {
+                margin-bottom: 32px;
+            }
+        }
+    }
+}
